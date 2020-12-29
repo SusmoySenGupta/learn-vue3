@@ -1,7 +1,7 @@
 <template>
   <div class="bg-gray-100">
     <AppNav title="Calender App"/>
-    <div class="min-h-screen -mt-4 w-full flex justify-center items-center">
+    <div class="min-h-screen  w-full flex justify-center items-center">
         <div class="bg-white rounded-md  lg:mt-4 lg:mx-96 border overflow-hidden shadow-md">
             <div class="bg-gray-600 p-2 mb-3 text-center text-lg lg:text-2xl text-white font-semibold flex justify-between items-center">
                 <button class="w-7 hover:text-gray-300" @click="prevMonth()">

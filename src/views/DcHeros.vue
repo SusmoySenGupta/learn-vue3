@@ -1,7 +1,7 @@
 <template>
   <div class="DcHeros bg-gray-100 w-full min-h-screen">
     <AppNav title="DC Heros"/>
-    <div class="bg-gray-100 w-full  max-h-screen  max-w-full flex flex-col items-center justify-center">
+    <div class="min-h-screen  w-full flex flex-col justify-center items-center">
       <div class=" w-80 h-16 mt-4 flex justify-center items-center gap-2">
         <input type="text" @keydown.enter="addHero()" v-model="heroName" class="rounded-md py-2 px-1 border" placeholder="Type your hero name">
         <button @click="addHero()" class="bg-green-500 text-sm px-4 py-2 text-center text-white font-semibold rounded hover:bg-green-600">Add</button>

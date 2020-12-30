@@ -10,20 +10,10 @@
         <th class="border py-2 text-sm text-center px-8">Topic</th>
       </thead>
       <tbody>
-        <tr class="bg-gray-100">
-          <td class="border py-2 text-sm text-center px-8"> 1. </td>
-          <td class="border py-2 text-sm text-center px-8 text-blue-500"> <router-link :to="{name: 'DcHeros'}">DC heros</router-link> </td>
-          <td class="border py-2 text-sm text-center px-8"> Data, methods, computed property  </td>
-        </tr>
-        <tr>
-          <td class="border py-2 text-sm text-center px-8"> 2. </td>
-          <td class="border py-2 text-sm text-center px-8 text-blue-500"> <router-link to="Calender">Calender App</router-link> </td>
-          <td class="border py-2 text-sm text-center px-8"> Data, methods, computed property, date function</td>
-        </tr>
-        <tr class="bg-gray-100">
-          <td class="border py-2 text-sm text-center px-8"> 3. </td>
-          <td class="border py-2 text-sm text-center px-8 text-blue-500"> <router-link :to="{name: 'Markdown'}">Markdown App</router-link> </td>
-          <td class="border py-2 text-sm text-center px-8"> Data, methods, computed property, marked package, mixins  </td>
+        <tr v-for="(item, index) in items" :key="index" :class="index%2 === 0 ? 'bg-gray-100' : '' ">
+          <td class="border py-2 text-sm text-center px-8"> {{ index + 1 }}. </td>
+          <td class="border py-2 text-sm text-center px-8 text-blue-500"> <router-link :to="{name: item.to}">{{ item.name }}</router-link> </td>
+          <td class="border py-2 text-sm text-center px-8"> {{ item.topic }}  </td>
         </tr>
       </tbody>
     </table>
@@ -35,6 +25,15 @@
 
 export default {
   name: 'Home',
+  data() {
+    return {
+      items: [
+        {name: "DC heros", to: "DcHeros", topic: "Data, methods, computed property"  },
+        {name: "Calender App", to: "Calender", topic: "JavaScript date function"  },
+        {name: "Markdown App", to: "Markdown", topic: "Mixins, marked package"  },
+      ],
+    }
+  }
 
 }
 </script>

@@ -1,6 +1,6 @@
 <template>
   <div
-    class="fixed bg-green-500 w-full p-4 flex flex-reverse justify-between items-center"
+    class="bg-green-500 w-full p-4 flex flex-reverse justify-between items-center"
   >
     <div class="invisible"></div>
     <div class="text-white font-semibold text-xl text-center">

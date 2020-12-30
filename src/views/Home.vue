@@ -23,7 +23,7 @@
         <tr class="bg-gray-100">
           <td class="border py-2 text-sm text-center px-8"> 3. </td>
           <td class="border py-2 text-sm text-center px-8 text-blue-500"> <router-link :to="{name: 'Markdown'}">Markdown App</router-link> </td>
-          <td class="border py-2 text-sm text-center px-8"> Data, methods, computed property  </td>
+          <td class="border py-2 text-sm text-center px-8"> Data, methods, computed property, marked package, mixins  </td>
         </tr>
       </tbody>
     </table>

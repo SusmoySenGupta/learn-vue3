@@ -1,9 +1,9 @@
 import { createRouter, createWebHistory } from "vue-router";
-import Home from "../views/Home.vue";
-import DcHeros from "../views/DcHeros.vue";
-import Calender from "../views/Calender.vue";
-import Markdown from "../views/Markdown.vue";
-import SliderCarousel from "../views/SliderCarousel.vue";
+import Home from "@/views/Home.vue";
+import DcHeros from "@/views/DcHeros.vue";
+import Calender from "@/views/Calender.vue";
+import Markdown from "@/views/Markdown.vue";
+import SliderCarousel from "@/views/SliderCarousel.vue";
 
 const routes = [
   {

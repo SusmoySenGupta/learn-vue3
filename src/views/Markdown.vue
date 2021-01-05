@@ -1,24 +1,28 @@
 <template>
-  <div class="bg-gray-100">
-    <AppNav title="Markdown App"/>
-    <div class="h-screen pt-12 w-full px-32 flex flex-col lg:flex-row justify-center items-center gap-1">
-        <div class="w-1/2 h-96 border bg-white shadow-md rounded-md overflow-hidden p-0.5">
-          <textarea class="w-full min-h-full placeholder-gray-400" placeholder="Type here..." :value="text" @input="update"> </textarea>
-        </div>
-        <div class="w-1/2 h-96 border bg-gray-50 shadow-md rounded-md overflow-hidden p-0.5" v-html="markedText"></div>
-        
+  <div class="w-full h-full flex gap-1 p-4">
+    <div class="w-1/2 h-full bg-white overflow-y-auto">
+      <div class="bg-gray-50 w-full h-12 flex justify-center items-center">
+        <h1 class="text-gray-400 text-xl font-light tracking-tight">Input</h1>
+      </div>
+      <div class="w-full h-5/6 px-2 pt-1">
+        <textarea class="w-full h-full placeholder-gray-400 focus:outline-none" ref="markdownTextRef" placeholder="Type here..." :value="text" @input="update"> </textarea>
+      </div>
+    </div>
+    <div class="w-1/2 h-full bg-blue-100 overflow-y-auto">
+      <div class="bg-blue-200 w-full h-12 flex justify-center items-center">
+        <h1 class="text-blue-400 text-xl font-light tracking-tight">Marked</h1>
+      </div>
+      <div class="w-full h-5/6" v-html="markedText"> </div>
     </div>
   </div>
 </template>
 <script>
 // @ is an alias to /src
-import AppNav from '@/components/AppNav';
 import marked from "marked";
 import debounce from "../utilities/mixins/debounce";
 
 export default {
   name: 'Markdown',
-  components: { AppNav },
   mixins: [debounce],
   data() {
     return {
@@ -35,7 +39,10 @@ export default {
     markedText(){
       return marked(this.text);
     }
-  }  
+  },
+  mounted(){
+    this.$refs.markdownTextRef.focus();
+  }
 }
 </script>
 

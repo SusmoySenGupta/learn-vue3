@@ -26,14 +26,17 @@
               <button @click="pressed('0')" class="bg-gray-800 w-16 h-16 text-lg text-white font-semibold rounded shadow-md hover:bg-green-500 hover:text-white">0</button>
               <button @click="pressed('=')" class="bg-gray-800 text-lg text-white font-semibold rounded shadow-md hover:bg-green-500 hover:text-white">=</button>
               <button @click="pressed('/')" class="bg-gray-800 w-16 h-16 text-lg text-white font-semibold rounded shadow-md hover:bg-green-500 hover:text-white">/</button>
-
+          </div>
+          <div class="text-center mt-6 text-gray-400">
+              Works with keyboard
           </div>
       </div>
   </div>
 </template>
 
 <script>
-import {onMounted, onUnmounted, ref} from 'vue';
+import {ref} from 'vue';
+import useWindowEvent from '../utilities/composition/useWindowEvent'
 export default {
     name: 'Calculator',
     setup(){
@@ -73,8 +76,8 @@ export default {
         const divide = () =>  currentNumber.value = +previousNumber.value / +currentNumber.value;    
 
         const handleKeyDown = (e) => pressed(e.key);
-        onMounted(() => window.addEventListener("keydown", handleKeyDown) );
-        onUnmounted(() => window.removeEventListener("keydown", handleKeyDown));
+
+        useWindowEvent("keydown", handleKeyDown);
 
         return {currentNumber, pressed, selectedOperation, previousNumber}
     }

@@ -12,7 +12,8 @@
     "firebase": "^8.2.1",
     "marked": "^1.2.7",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.0-0"
+    "vue-router": "^4.0.0-0",
+    "vuex": "^4.0.0-rc.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss7-compat": "^2.0.2",

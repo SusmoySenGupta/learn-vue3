@@ -5,6 +5,8 @@ import Calender from "@/views/Calender.vue";
 import Markdown from "@/views/Markdown.vue";
 import SliderCarousel from "@/views/SliderCarousel.vue";
 import Calculator from "@/views/Calculator.vue";
+import ReuseableModal from "@/views/ReuseableModal.vue";
+import Chat from "@/views/Chat.vue";
 
 const routes = [
   {
@@ -45,6 +47,16 @@ const routes = [
     path: "/calculator",
     name: "Calculator",
     component: Calculator,
+  },
+  {
+    path: "/reuseable-modal",
+    name: "ReuseableModal",
+    component: ReuseableModal,
+  },
+  {
+    path: "/chat",
+    name: "Chat",
+    component: Chat,
   },
 ];
 

@@ -3,7 +3,7 @@
     <img alt="Vue logo" src="../assets/logo.png" class="w-32">
     <p class="text-white">Trying out new <b class="text-green-600">Vue 3</b></p>
     <br>
-    <div class="h-64 shadow-xl rounded overflow-auto">
+    <div class="h-72 shadow-xl rounded overflow-auto">
       <table class="border h-full text-white bg-gray-700 shadow-xl">
         <thead>
           <th class="border py-2 text-sm text-center px-8">#</th>
@@ -34,13 +34,15 @@ export default {
     return {
       items: [
         {name: "DC heros", to: "DcHeros", topic: "Data, methods, computed property"  },
-        {name: "Calender App", to: "Calender", topic: "JavaScript date function"  },
-        {name: "Markdown App", to: "Markdown", topic: "Mixins, marked package, two way data binding"  },
-        {name: "Slider Carousel App", to: "SliderCarousel", topic: "Virtual dom, life cycle hooks, transition & animation"  },
-        {name: "Calculator App", to: "Calculator", topic: "Composition api, life cycle hooks"  },
+        {name: "Calender", to: "Calender", topic: "JavaScript date function"  },
+        {name: "Markdown", to: "Markdown", topic: "Mixins, marked package, two way data binding"  },
+        {name: "Slider", to: "SliderCarousel", topic: "Virtual dom, life cycle hooks, transition & animation"  },
+        {name: "Calculator", to: "Calculator", topic: "Composition api, life cycle hooks"  },
+        {name: "Reuseable Modal", to: "ReuseableModal", topic: "Solts"  },
+        {name: "Chat", to: "Chat", topic: "Realtime chatting app"  },
       ],
     }
-  }
+  },
 
 }
 </script>

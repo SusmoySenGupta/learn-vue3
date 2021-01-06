@@ -23,7 +23,7 @@ export default {
     return {
         isOpen: false,
         isLoggedIn: false,
-        authUser: {}
+        authUser: {},
     }
   },
   mounted(){

@@ -27,37 +27,33 @@
   </div>
 </template>
 <script>
-// @ is an alias to /src
+import {computed, onMounted, ref} from 'vue';
 export default {
   name: 'DcHeros',
-  data() {
-    return {
-      heroName: '',
-      dcHeros: [
-        {name: "Super Man"},
-        {name: "Bat man"},
-      ]
-    }
-  },
-  methods: {
-    addHero(){
-      if(this.heroName !== ''){
-        this.dcHeros.push({name: this.heroName});
-        this.heroName = '';
+  setup(){
+    const heroName= ref("");
+    const dcHeros = ref([ {name: "Super Man"}, {name: "Bat man"} ]);
+    const newHeroRef = ref("");
+    const totalHeroC = computed({
+      get: () => {dcHeros.value.length;}
+    });
+    
+    function addHero(){
+      if(heroName.value !== ''){
+        dcHeros.value.push({name: heroName.value});
+        heroName.value = '';
       }
-    },
+    }
 
-    removeHero(index){
-      this.dcHeros = this.dcHeros.filter((hero, i) => i !== index);
+    function removeHero(index){
+      dcHeros.value = dcHeros.value.filter((hero, i) => i !== index);
     }
-  },
-  computed: {
-    totalHeroC(){
-      return this.dcHeros.length;
-    }
-  },
-  mounted(){
-    this.$refs.newHeroRef.focus();
+
+    onMounted(() => {
+      newHeroRef.value.focus();
+    })
+
+    return {heroName, dcHeros, addHero, removeHero, newHeroRef, totalHeroC}
   }
 }
 </script>

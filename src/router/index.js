@@ -4,6 +4,7 @@ import DcHeros from "@/views/DcHeros.vue";
 import Calender from "@/views/Calender.vue";
 import Markdown from "@/views/Markdown.vue";
 import SliderCarousel from "@/views/SliderCarousel.vue";
+import Calculator from "@/views/Calculator.vue";
 
 const routes = [
   {
@@ -39,6 +40,11 @@ const routes = [
     path: "/slider-carousel",
     name: "SliderCarousel",
     component: SliderCarousel,
+  },
+  {
+    path: "/calculator",
+    name: "Calculator",
+    component: Calculator,
   },
 ];
 

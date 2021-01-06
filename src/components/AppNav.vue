@@ -37,15 +37,17 @@ export default {
   name: "AppNav",
   props: {
     title: {type: String, default: 'VueJs 3'},
-    isLoggedIn: {type: Boolean, default: false}
+    isLoggedIn: {type: Boolean, default: false},
+    
   },
   data(){
     return {
       items: [
         {name: "DC heros", to: "DcHeros", topic: "Data, methods, computed property"  },
         {name: "Calender App", to: "Calender", topic: "JavaScript date function"  },
-        {name: "Markdown App", to: "Markdown", topic: "Mixins, marked package"  },
+        {name: "Markdown App", to: "Markdown", topic: "Mixins, marked package, two way data binding"  },
         {name: "Slider Carousel App", to: "SliderCarousel", topic: "Virtual dom, life cycle hooks, transition & animation"  },
+        {name: "Calculator App", to: "Calculator", topic: "Virtual dom, life cycle hooks, transition & animation"  },
       ],
     }
   },

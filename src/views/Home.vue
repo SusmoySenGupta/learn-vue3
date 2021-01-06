@@ -19,6 +19,9 @@
         </tbody>
       </table>
     </div>
+    <div class="mt-4 text-white ">
+      <p class=""><strong>Other topics:</strong> Authentication(Firebase), Composition Api, Teleport</p>
+    </div>
   </div>
 </template>
 
@@ -34,6 +37,7 @@ export default {
         {name: "Calender App", to: "Calender", topic: "JavaScript date function"  },
         {name: "Markdown App", to: "Markdown", topic: "Mixins, marked package, two way data binding"  },
         {name: "Slider Carousel App", to: "SliderCarousel", topic: "Virtual dom, life cycle hooks, transition & animation"  },
+        {name: "Calculator App", to: "Calculator", topic: "Composition api, life cycle hooks"  },
       ],
     }
   }

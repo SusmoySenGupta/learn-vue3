@@ -1,7 +1,7 @@
 <template>
   <div class="w-96 h-96  rounded-md overflow-hidden">
     <div class="w-full h-1/5 bg-gray-800 px-4 py-6 flex justify-between items-center gap-2">
-      <input type="text" ref="newHeroRef" @keydown.enter="addHero()" v-model="heroName" class="w-full rounded-md py-2 px-2 focus:outline-none focus:ring-4" placeholder="Type your hero name">
+      <input type="text" ref="newHeroRef" @keydown.enter="addHero()" v-model="heroName" class="bg-gray-700 w-full rounded-md py-2 px-2 text-white focus:outline-none focus:ring-4" placeholder="Type your hero name">
       <button @click="addHero()" 
         class="bg-green-600 text-sm px-4 py-2 text-center text-white font-semibold rounded focus:outline-none focus:ring-4 hover:bg-green-600">
         Add
@@ -35,7 +35,7 @@ export default {
     const dcHeros = ref([ {name: "Super Man"}, {name: "Bat man"} ]);
     const newHeroRef = ref("");
     const totalHeroC = computed({
-      get: () => {dcHeros.value.length;}
+      get: () => {return  dcHeros.value.length;}
     });
     
     function addHero(){

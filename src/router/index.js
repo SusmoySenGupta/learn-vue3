@@ -7,21 +7,15 @@ import SliderCarousel from "@/views/SliderCarousel.vue";
 import Calculator from "@/views/Calculator.vue";
 import ReuseableModal from "@/views/ReuseableModal.vue";
 import Chat from "@/views/Chat.vue";
+import Crud from "@/views/Crud.vue";
+import store from "../store/index.js";
+import ObjectDetection from "@/views/ObjectDetection";
 
 const routes = [
   {
     path: "/",
     name: "Home",
     component: Home,
-  },
-  {
-    path: "/about",
-    name: "About",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/About.vue"),
   },
   {
     path: "/dc-heros",
@@ -57,6 +51,17 @@ const routes = [
     path: "/chat",
     name: "Chat",
     component: Chat,
+    meta: { middleware: "auth" },
+  },
+  {
+    path: "/crud",
+    name: "Crud",
+    component: Crud,
+  },
+  {
+    path: "/tensorflow",
+    name: "ObjectDetection",
+    component: ObjectDetection,
   },
 ];
 
@@ -64,6 +69,19 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes,
   base: "/practice/",
+});
+
+router.beforeEach((to, from, next) => {
+  if (to.meta.middleware) {
+    const middleware = require(`../middleware/${to.meta.middleware}`);
+    if (middleware) {
+      middleware.default(next, store);
+    } else {
+      next();
+    }
+  } else {
+    next();
+  }
 });
 
 export default router;

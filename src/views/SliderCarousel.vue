@@ -1,5 +1,5 @@
 <template>
-  <div class="w-screen h-full flex flex-wrap relative">
+  <div class="w-screen h-full mt-12 lg:mt-0 flex flex-wrap relative">
     <div class="w-full  mt-4 absolute" v-for="(color, index) in colors" :key="index">
         <transition name="fade">
             <div class="h-96" v-if="currentSlide == index" :class="color"></div>

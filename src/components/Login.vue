@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div v-if="isLoginModalOpen">
         <div @click="close()" class="z-10 bg-gray-600 opacity-80 w-screen h-screen fixed top-0 flex justify-center items-center"></div>
         <div class="absolute inset-0 ">
             <div class=" flex items-center justify-center h-full">
@@ -41,7 +41,6 @@ export default {
     name: 'Login',
     components:{GoogleLogin},
     data(){
-        
         return{
             form:{
                 email: 'susmoy@gmail.com',
@@ -61,6 +60,8 @@ export default {
                 this.isLoading = false;
                 this.form.email = '';
                 this.form.password = '';
+                this.$store.commit("setIsLoggedIn", true);
+                this.$store.commit("setAuthUser", user);
                 this.close();
             })
             .catch((error) => {
@@ -71,11 +72,16 @@ export default {
        },
        
        close(){
-           this.$emit('close-modal');
+           this.$store.commit('setLoginModal', false);
        }
     },
     mounted(){
-        this.$refs.emailRef.focus();
+        // this.$refs.emailRef.focus();
+    },
+    computed:{
+        isLoginModalOpen(){
+            return this.$store.state.isLoginModalOpen;
+        }
     }
 }
 </script>

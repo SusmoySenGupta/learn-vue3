@@ -1,5 +1,5 @@
 <template>
-  <div id="main">
+  <div id="main" class="font-sans">
     <AppNav />
     <div class="w-screen h-screen bg-gray-700 pt-12">
       <div class="w-full h-full flex justify-center items-center overflow-hidden">

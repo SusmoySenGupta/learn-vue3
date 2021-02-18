@@ -1,4 +1,4 @@
-# calender-app
+# 10 VueJs apps
 
 ## Project setup
 ```
